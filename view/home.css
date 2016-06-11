@@ -1,0 +1,29 @@
+p#titulo{
+	text-align: center;
+	font-size: 200%;
+
+	margin: 0px;
+}
+
+p#para_entrar{
+	text-align: center;
+}
+
+
+p#alunos_fila{
+	text-align: center;
+	border: 1px solid black;
+}
+
+div#div_left{
+	float:left;
+	background-color: lightgreen;
+	padding: 10px;
+	margin-right: 10px;
+}
+
+div#div_right{
+	float:left;
+	background-color: lightblue;
+	padding: 10px;
+}

@@ -12,21 +12,11 @@
 
 
 		$aluno = $dao->matriculaValida($matricula);
-		//matricula válida
 
-		//já não ta na lista de hoje?
-
-		//adicionar
-		if($aluno == null){
-			array_push($status,   array("status"=>"Aluno ".$_POST['matricula']." não encontrado :("));
+		if($aluno != null){
+			echo "true";
 		}else{
-			array_push($status,   array("status"=>"Auno ".$_POST['matricula']." adicionado a fila :)"));
-
+			echo "false";
 		}
-	}else{
-			array_push($status,   array("status"=>"Aluno não encontrado :("));
 	}
-
-	echo json_encode($status);
-
  ?>
