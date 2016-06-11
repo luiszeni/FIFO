@@ -26,15 +26,7 @@
 
 		<div id="div_right">
 			<p id="alunos_fila"><b>Alunos na Fila</b></p>
-			<table>
-				<tr>
-					<th>Posição</th>
-					<th>Nome</th>
-				</tr>
-				<tr>
-					<td>01</td>
-					<td>Luis Felipe Zeni</td>
-				</tr>
+			<table id= "tabelaAluno">
 			</table>
 		</div>
 
@@ -52,18 +44,37 @@
 				datatype:"html",
 				success: function(resultado){
 					alert(resultado);
+					//$("#tabelaAluno").html(resultado);
 				},
 
 				error: function(xhr,ajaxOptions, seila){
 					alert(xhr.status);
 				}
-		});
-
-
-		
+		});	
 	}
 
+	var funcaoAtualizaFila = function (){
+	
+
+		$.ajax({ 
+				url:"json/buscarAlunos.json.php",
+				type:"POST",
+				data: {},
+				datatype:"html",
+				success: function(resultado){
+					$("#tabelaAluno").html(resultado);
+					//alert(resultado);
+				},
+
+				error: function(xhr,ajaxOptions, seila){
+					alert(xhr.status);
+				}
+		});	
+	}
+
+
 	$("#bt_entrar").click(funcaoDoClicao);
+	$("#bt_sair").click(funcaoAtualizaFila);
 
 	</script>
 

@@ -21,8 +21,6 @@
 
 		}
 
-
-
 		public function inserir($admin){
 
 			$query = 'INSERT INTO '.$this->tabela.'(login, senha) values ("'.$admin->getLogin(). '", "'.$admin->getSenha().'")';

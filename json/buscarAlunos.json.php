@@ -1,20 +1,19 @@
 <?php 
+	require_once("../model/AlunoDAO.class.php");
+	require_once("../model/FilaDAO.class.php");
 
-	require("../model/AlunoDAO.class.php");
-
-	$status = Array();
-
-	if(isset($_POST['date'])){
-
-		$date = $_POST['date'];
-
-		$dao = new AlunoDAO();
-
-
-		$alunos = $dao->buscarFila($date);
-		
-		echo json_encode($alunos);
-
+	$daoAluno = new AlunoDAO();
+	$daoFila = new FilaDAO();
+	
+	$alunos = $daoFila->buscarFila();
+	
+	echo "<table>";
+	foreach ($alunos as $aluno) {
+		echo "<tr><td>";
+		echo $aluno->getNome();
+		echo "</td></tr>";
 	}
+
+	echo "</table>";
 
  ?>

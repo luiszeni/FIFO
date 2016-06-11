@@ -29,6 +29,7 @@
 
 
 
+	var_dump($daoFila->buscarFila());
 
 	$daoAluno->excluir($aluno);
 	$alunoBusca = $daoAluno->buscarPorId($aluno->getId());
@@ -38,5 +39,9 @@
 	}else{
 		echo "<p style='color:red'>Usuario de teste excluido: ERRO</p>";
 	}
+
+
 	echo "</div>";
+
+
 ?>
